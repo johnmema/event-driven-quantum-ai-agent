@@ -15,13 +15,18 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="font-sans antialiased" style={{ backgroundColor: '#4B8AFE' }}>
-        <div className="content-wrapper dotted-bg">
-          {children}
-        </div>
+      <body className="font-sans antialiased">
+        <div className="content-wrapper dotted-bg">{children}</div>
       </body>
     </html>
   );
