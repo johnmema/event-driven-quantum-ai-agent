@@ -25,7 +25,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased">
+      <body
+        className="font-sans antialiased"
+        style={{ backgroundColor: "#4B8AFE" }}
+      >
         <div className="content-wrapper dotted-bg">{children}</div>
       </body>
     </html>
