@@ -1,33 +1,47 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
-const mockShows = [
-  { id: 1, title: 'Wicked' },
-  { id: 2, title: 'Hamilton' },
-  { id: 3, title: 'The Lion King' },
-  { id: 4, title: 'Chicago' },
-  { id: 5, title: 'Moulin Rouge!' },
-  { id: 6, title: 'Aladdin' },
-]
+interface Show {
+  id: number;
+  title: string;
+  path: string;
+}
+
+const mockShows: Show[] = [
+  { id: 1, title: "Wicked", path: "/Wicked.webp" },
+  { id: 2, title: "Dorian Gray", path: "/Dorian_Gray.webp" },
+  { id: 3, title: "The Lion King", path: "/Wicked.webp" },
+  { id: 4, title: "Chicago", path: "/Dorian_Gray.webp" },
+  { id: 5, title: "Moulin Rouge!", path: "/Wicked.webp" },
+  { id: 6, title: "Aladdin", path: "/Wicked.webp" },
+];
 
 export function ShowsRow() {
   return (
-    <section className="w-full py-12">
+    <section className="w-full py-12" id="whats-on">
       <h2 className="font-instrument-serif text-3xl md:text-4xl font-bold text-black mb-8">
-        Currently on Broadway (& Beyond)
+        Currently on Broadway{" "}
+        <span className="italic text-gray-400">(& Beyond)</span>
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
         {mockShows.map((show) => (
-          <Link key={show.id} href={`/shows/${show.id}`} className="group block">
-            <div className="aspect-[3/4] bg-gray-200 rounded-md overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-              <span className="text-gray-500 text-xs text-center px-2">{show.title}</span>
+          <Link
+            key={show.id}
+            href={`/shows/${show.id}`}
+            className="group shrink-0 snap-start w-[300px]"
+          >
+            <div className="relative aspect-square rounded-md overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+              <Image
+                src={show.path}
+                alt={show.title}
+                fill
+                className="object-cover"
+                sizes="300px"
+              />
             </div>
-            <p className="mt-2 text-sm font-inter text-black text-center group-hover:opacity-70 transition-opacity">
-              {show.title}
-            </p>
           </Link>
         ))}
       </div>
     </section>
-  )
+  );
 }

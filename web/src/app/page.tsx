@@ -1,3 +1,5 @@
+import { AboutUs } from "@/components/AboutUs";
+import { FAQ } from "@/components/FAQ";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { ShowsRow } from "@/components/ShowsRow";
@@ -9,6 +11,8 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center w-full">
         <Hero />
         <ShowsRow />
+        <FAQ />
+        <AboutUs />
       </main>
     </div>
   );

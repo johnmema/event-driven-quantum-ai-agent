@@ -185,3 +185,12 @@
   font-family: "Archivo Narrow", sans-serif;
   font-optical-sizing: auto;
 }
+
+/* Scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
