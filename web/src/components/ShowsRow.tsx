@@ -52,7 +52,7 @@ async function loadShows(): Promise<ShowCard[]> {
     .limit(12);
 
   if (error) {
-    console.error("Failed to load shows from Supabase", error.message);
+    // console.error("Failed to load shows from Supabase", error.message);
     return FALLBACK_SHOWS;
   }
 

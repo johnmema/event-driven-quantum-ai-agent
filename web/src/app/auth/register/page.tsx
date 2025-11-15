@@ -1,27 +1,27 @@
 import Link from "next/link";
 
 import { AuthShell } from "@/components/auth/AuthShell";
-import { LoginForm } from "@/components/auth/LoginForm";
+import { RegisterForm } from "@/components/auth/RegisterForm";
 import { Button } from "@/components/ui/button";
 
-export default function AuthLogin() {
+export default function AuthRegister() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex flex-1 flex-col items-center justify-center w-full py-12">
         <AuthShell
-          title="Log in"
-          subtitle="Sign in to manage every Broadway lottery entry in one place."
+          title="Create your account"
+          subtitle="One login, automatic entries into every Broadway lottery."
           footer={
             <Button
               asChild
               variant="ghost"
               className="font-instrument-serif text-2xl text-black hover:bg-transparent"
             >
-              <Link href="/auth/register">Not registered? Sign up here</Link>
+              <Link href="/auth/login">Already have an account? Log in</Link>
             </Button>
           }
         >
-          <LoginForm />
+          <RegisterForm />
         </AuthShell>
       </main>
     </div>

@@ -22,7 +22,7 @@ export function Hero() {
             <Link href="/whats-on">Try it now</Link>
           </Button>
           <Button asChild>
-            <Link href="/auth/login">Create Free Account</Link>
+            <Link href="/auth/register">Create Free Account</Link>
           </Button>
         </div>
       </div>
