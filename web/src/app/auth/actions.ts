@@ -1,5 +1,7 @@
 "use server";
 
+import { redirect } from "next/navigation";
+
 import { getSupabaseServerClient } from "@/lib/supabase";
 import { type AuthActionState } from "./action-state";
 
@@ -43,7 +45,7 @@ export async function loginAction(
   return {
     status: "success",
     message: "Welcome back! Redirecting you to your account…",
-    redirectTo: "/",
+    redirectTo: "/dashboard",
   };
 }
 
@@ -98,6 +100,16 @@ export async function signupAction(
     message: hasSession
       ? "Account created! Redirecting you to your dashboard…"
       : "Account created! Please confirm your email to finish signing in.",
-    redirectTo: hasSession ? "/" : null,
+    redirectTo: hasSession ? "/dashboard" : null,
   };
+}
+
+export async function logoutAction() {
+  const supabase = await getSupabaseServerClient();
+
+  if (supabase) {
+    await supabase.auth.signOut();
+  }
+
+  redirect("/");
 }
