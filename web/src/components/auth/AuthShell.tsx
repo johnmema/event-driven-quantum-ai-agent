@@ -17,14 +17,14 @@ export function AuthShell({
   className,
 }: AuthShellProps) {
   return (
-    <section className={cn("w-full px-4", className)}>
+    <section className={cn("w-full", className)}>
       <div className="mx-auto max-w-2xl rounded-[28px] border-[3px] border-[#4b8afe] bg-white shadow-[10px_10px_0_rgba(66,133,244,0.45)]">
         <div className="border-b border-[#4b8afe]/20 px-8 py-8">
-          <h1 className="font-instrument-serif text-4xl md:text-5xl font-bold text-black">
+          <h1 className="text-4xl md:text-5xl font-bold text-black">
             {title}
           </h1>
           {subtitle ? (
-            <p className="mt-2 text-lg text-black/80 font-instrument-serif">
+            <p className="mt-2 text-lg text-black/80">
               {subtitle}
             </p>
           ) : null}

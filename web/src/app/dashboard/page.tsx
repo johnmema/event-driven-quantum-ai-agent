@@ -83,7 +83,7 @@ export default async function DashboardPage() {
     extractFirstName(user.user_metadata?.full_name) ?? user.email ?? "friend";
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 py-8 text-black md:px-6 lg:px-0">
+    <div className="mx-auto w-full max-w-6xl px-8 py-8 text-black">
       <DashboardHeader name={greetingName} email={user.email} />
       <main className="mt-8 flex flex-col gap-8">
         <section
@@ -92,7 +92,7 @@ export default async function DashboardPage() {
         >
           <div className="space-y-1">
             <p className="text-black/70">Welcome back, {greetingName}.</p>
-            <h1 className="font-instrument-serif text-4xl font-semibold md:text-5xl">
+            <h1 className="text-4xl font-semibold md:text-5xl">
               Lottery dashboard
             </h1>
           </div>
@@ -100,7 +100,9 @@ export default async function DashboardPage() {
             <p className="text-sm uppercase tracking-wide text-black/50">
               Today
             </p>
-            <p className="font-instrument-serif text-2xl">{todayLabel}</p>
+            <p className="text-2xl" suppressHydrationWarning>
+              {todayLabel}
+            </p>
           </div>
         </section>
 
@@ -118,13 +120,12 @@ export default async function DashboardPage() {
               <div className="rounded-2xl bg-[#4b8afe]/10 px-4 py-3 text-sm font-medium text-[#1a2a52]">
                 Placeholder: add live task status + last submission timestamp.
               </div>
-              <Button
+              <button
                 type="button"
-                variant="outline"
-                className="rounded-full border-black/20 bg-white/90 text-lg text-black"
+                className="btn-primary"
               >
                 Manage entry schedule
-              </Button>
+              </button>
             </CardContent>
           </Card>
         </section>
@@ -140,13 +141,12 @@ export default async function DashboardPage() {
                     user follows once the Supabase relation is ready.
                   </CardDescription>
                 </div>
-                <Button
+                <button
                   type="button"
-                  variant="outline"
-                  className="rounded-full border-black/20 bg-white/90 text-sm text-black"
+                  className="btn-primary"
                 >
                   Edit shows
-                </Button>
+                </button>
               </div>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -165,7 +165,7 @@ export default async function DashboardPage() {
                     />
                   </div>
                   <div className="flex-1 space-y-1">
-                    <p className="font-instrument-serif text-2xl">
+                    <p className="text-2xl">
                       {show.title}
                     </p>
                     <p className="text-sm text-black/60">{show.note}</p>
@@ -175,13 +175,12 @@ export default async function DashboardPage() {
                       </p>
                     ) : null}
                   </div>
-                  <Button
+                  <button
                     type="button"
-                    variant="ghost"
-                    className="rounded-full border border-transparent px-4 text-sm text-black hover:border-black/10 hover:bg-black/5"
+                    className="btn-primary"
                   >
                     View details
-                  </Button>
+                  </button>
                 </div>
               ))}
             </CardContent>
@@ -255,11 +254,11 @@ function DashboardHeader({ name, email }: DashboardHeaderProps) {
 
   return (
     <header className="flex flex-wrap items-center gap-6 rounded-3xl border border-black/10 bg-white/90 px-6 py-4 shadow-sm">
-      <div className="font-instrument-serif text-3xl font-bold text-black underline">
+      <div className="font-semibold text-black underline text-[40px]">
         <Link href="/">Playbill Picks</Link>
       </div>
 
-      <nav className="flex flex-1 items-center justify-center gap-6 font-instrument-serif text-2xl text-black">
+      <nav className="flex flex-1 items-center justify-center gap-4 text-black text-[32px] font-normal">
         <Link href="/dashboard" className="hover:underline">
           My shows
         </Link>
@@ -276,19 +275,19 @@ function DashboardHeader({ name, email }: DashboardHeaderProps) {
             </AvatarFallback>
           </Avatar>
           <div className="text-left leading-tight">
-            <p className="font-instrument-serif text-xs uppercase tracking-wide text-black/50">
+            <p className="text-xs uppercase tracking-wide text-black/50">
               Signed in as
             </p>
-            <p className="font-instrument-serif text-lg">{name}</p>
+            <p className="text-lg">{name}</p>
           </div>
         </div>
         <form action={logoutAction}>
-          <Button
+          <button
             type="submit"
-            className="rounded-full bg-[#ffef5c] text-black shadow-[2px_2px_0_#4285f4]"
+            className="btn-primary"
           >
             Log out
-          </Button>
+          </button>
         </form>
       </div>
     </header>

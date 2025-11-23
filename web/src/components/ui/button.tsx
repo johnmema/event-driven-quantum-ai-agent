@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "font-instrument-serif rounded-none bg-[#fff44f] text-black text-xl px-8 py-3 shadow-[4px_4px_0_#4285f4] hover:translate-x-[2px] hover:translate-y-[2px] transition-transform",
+          "rounded-none bg-[#fff44f] text-black text-xl px-8 py-3 shadow-[4px_4px_0_#4285f4] hover:translate-x-[2px] hover:translate-y-[2px] transition-transform",
         navigationHeader:
           "hover:underline transition-all focus:outline-none text-2xl",
         destructive:

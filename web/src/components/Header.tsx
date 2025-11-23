@@ -17,25 +17,26 @@ export function Header() {
   const isLoggedIn = false; // TODO: derive from auth context
 
   return (
-    <header className="flex items-center justify-between w-full py-4 px-8">
-      <div className="font-instrument-serif text-4xl font-bold text-black underline">
+    <header className="w-full py-3 sm:py-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between gap-4">
+      <div className="font-semibold text-black underline text-[32px] sm:text-[36px] md:text-[40px] leading-tight">
         <Link href="/">Playbill Picks</Link>
       </div>
 
-      <nav className="hidden md:flex items-center gap-16 font-instrument-serif text-3xl text-black">
+      <nav className="hidden lg:flex items-center gap-4 xl:gap-8 text-black text-[24px] xl:text-[32px] font-light">
         <HeaderNavigationLink targetId="home" title="Home" />
         <HeaderNavigationLink targetId="whats-on" title="What's on" />
         <HeaderNavigationLink targetId="faq" title="FAQ" />
         <HeaderNavigationLink targetId="about" title="About Us" />
       </nav>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 shrink-0">
         {isLoggedIn ? (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="ghost"
-                className="flex items-center gap-2 p-2 font-instrument-serif"
+                className="flex items-center gap-2 p-2"
               >
                 <Avatar className="w-8 h-8">
                   <AvatarImage src="/placeholder-avatar.jpg" alt="Profile" />
@@ -52,10 +53,11 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
         ) : (
-          <Button asChild variant="default">
-            <Link href="/auth/login">Log in</Link>
-          </Button>
+          <Link href="/auth/login" className="btn-primary">
+            Log in
+          </Link>
         )}
+      </div>
       </div>
     </header>
   );

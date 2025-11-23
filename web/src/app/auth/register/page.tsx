@@ -7,22 +7,20 @@ import { Button } from "@/components/ui/button";
 export default function AuthRegister() {
   return (
     <div className="flex flex-col min-h-screen">
-      <main className="flex flex-1 flex-col items-center justify-center w-full py-12">
+      <main className="flex flex-1 flex-col w-full py-12">
+        <div className="max-w-6xl mx-auto w-full px-8">
         <AuthShell
           title="Create your account"
           subtitle="One login, automatic entries into every Broadway lottery."
           footer={
-            <Button
-              asChild
-              variant="ghost"
-              className="font-instrument-serif text-2xl text-black hover:bg-transparent"
-            >
-              <Link href="/auth/login">Already have an account? Log in</Link>
-            </Button>
+            <Link href="/auth/login" className="btn-primary">
+              Already have an account? Log in
+            </Link>
           }
         >
           <RegisterForm />
         </AuthShell>
+        </div>
       </main>
     </div>
   );

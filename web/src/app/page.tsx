@@ -8,11 +8,13 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex flex-col items-center justify-center w-full">
-        <Hero />
-        <ShowsRow />
-        <FAQ />
-        <AboutUs />
+      <main className="flex flex-col w-full">
+        <div className="max-w-6xl mx-auto w-full px-4 sm:px-6 md:px-8">
+          <Hero />
+          <ShowsRow />
+          <FAQ />
+          <AboutUs />
+        </div>
       </main>
     </div>
   );

@@ -82,10 +82,10 @@ export function LoginForm() {
         </p>
       ) : null}
 
-      <Button
+      <button
         type="submit"
         disabled={pending}
-        className="w-full justify-center font-instrument-serif text-2xl"
+        className="btn-primary w-full justify-center flex items-center gap-2"
       >
         {pending ? (
           <>
@@ -95,7 +95,7 @@ export function LoginForm() {
         ) : (
           "Log in"
         )}
-      </Button>
+      </button>
     </form>
   );
 }

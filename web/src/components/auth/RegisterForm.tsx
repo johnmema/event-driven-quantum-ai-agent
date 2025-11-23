@@ -100,10 +100,10 @@ export function RegisterForm() {
         </p>
       ) : null}
 
-      <Button
+      <button
         type="submit"
         disabled={pending}
-        className="w-full justify-center font-instrument-serif text-2xl"
+        className="btn-primary w-full justify-center flex items-center gap-2"
       >
         {pending ? (
           <>
@@ -113,7 +113,7 @@ export function RegisterForm() {
         ) : (
           "Create your account"
         )}
-      </Button>
+      </button>
     </form>
   );
 }
